@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-navy antialiased bg-white;
+  }
+
+  ::selection {
+    @apply bg-electric/20 text-navy;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl
+           bg-electric text-white font-semibold text-sm sm:text-base
+           shadow-lg shadow-electric/25
+           transition-all duration-300 ease-out
+           hover:bg-electric-dark hover:shadow-xl hover:shadow-electric/30
+           hover:-translate-y-0.5 active:translate-y-0
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl
+           bg-white text-navy font-semibold text-sm sm:text-base
+           border border-gray-200 shadow-sm
+           transition-all duration-300 ease-out
+           hover:border-electric/30 hover:shadow-md hover:-translate-y-0.5
+           active:translate-y-0
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl
+           bg-white text-navy font-semibold text-base
+           shadow-lg
+           transition-all duration-300 ease-out
+           hover:shadow-xl hover:-translate-y-0.5
+           active:translate-y-0
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/60
+           shadow-glass-lg rounded-2xl;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg sm:text-xl text-gray-600 max-w-2xl;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy via-navy to-electric bg-clip-text text-transparent;
+  }
+}
